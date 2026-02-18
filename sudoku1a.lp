@@ -6,15 +6,19 @@
 
 % Your implementation please...
 
-% Define the size of the Sudoku grid (N x N)
-grid(4). 
+grid(4).
+size(N) :- grid(N).
+% achieved: the grid consists of 4 rows and 4 columns
 
-% Define possible numbers
-num(1..4).
+num(1..N) :- size(N).
+% achieved: each cell may contain any number from 1 to N
 
-% Each row must contain each number 1..N exactly once
+row(1..N) :- size(N).
+% achieved: the puzzle grid has N rows, numbered 1 through N 
 
-% Each column must contain each number 1..N exactly once
+column(1..N) :- size(N).
+% achieved: the puzzle grid has N columns, numbered 1 through N
+
 % Each subgrid must contain each number 1..N exactly once
 
 
