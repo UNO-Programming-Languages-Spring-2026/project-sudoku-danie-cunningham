@@ -6,18 +6,13 @@
 
 % Your implementation please...
 
-grid(4).
-size(N) :- grid(N).
-% achieved: the grid consists of 4 rows and 4 columns
+#const n = 4.
 
-num(1..N) :- size(N).
-% achieved: each cell may contain any number from 1 to N
+row(1..n).
+col(1..n).
+num(1..n).
+% achieved: rows, columns, and numbers are exactly the set {1..n}.
 
-row(1..N) :- size(N).
-% achieved: the puzzle grid has N rows, numbered 1 through N 
-
-column(1..N) :- size(N).
-% achieved: the puzzle grid has N columns, numbered 1 through N
 
 % If a number is given initially, the solver must use it.
 % No other number may appear in that cell.
