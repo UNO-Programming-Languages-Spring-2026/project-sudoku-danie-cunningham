@@ -12,6 +12,20 @@ col(1..n).
 num(1..n).
 % achieved: rows, columns, and numbers range from 1 to n.
 
+subgrid_size(S) :- S = 1..n, S*S = n.
+% achieved: S is the size of each subgrid, derived from n using S*S = n.
+
+subrow(X,SR) :- row(X), subgrid_size(S), SR = (X-1)/S.
+% achieved: SR is the subgrid-row index of X.
+
+subcol(Y,SC) :- col(Y), subgrid_size(S), SC = (Y-1)/S.
+% achieved: SC is the subgrid-column index of Y.
+
+subgrid(X,Y,G) :-
+    subrow(X,SR), subcol(Y,SC), subgrid_size(S),
+    G = 1 + SR*S + SC.
+% achieved: each cell (X,Y) is mapped to subgrid G.
+
 1 { sudoku(X,Y,N) : num(N) } 1 :- row(X), col(Y).
 % achieved: each cell (X,Y) contains exactly one number N from {1..n}.
 
