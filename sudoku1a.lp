@@ -19,6 +19,13 @@ row(1..N) :- size(N).
 column(1..N) :- size(N).
 % achieved: the puzzle grid has N columns, numbered 1 through N
 
+% If a number is given initially, the solver must use it.
+% No other number may appear in that cell.
+
+% For each row, each number 1..N must appear exactly once.
+
+% For each column, each number 1..N must appear exactly once.
+
 % Each subgrid must contain each number 1..N exactly once
 
 
