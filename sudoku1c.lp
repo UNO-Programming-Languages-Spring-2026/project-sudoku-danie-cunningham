@@ -39,7 +39,7 @@ sudoku(X,Y,N) :- initial(X,Y,N).
 :- sudoku(X1,Y,N), sudoku(X2,Y,N), X1 != X2.
 % achieved: no column contains the same number twice.
 
-:- subgrid(X1,Y1,G), subgrid(X2,Y2,G), sudoku(X1,Y1,N), sudoku(X2,Y2,N), X1 != X2, Y1 != Y2.
+:- subgrid(X1,Y1,G), subgrid(X2,Y2,G), sudoku(X1,Y1,N), sudoku(X2,Y2,N), X1 != X2; Y1 != Y2.
 % achieved: no subgrid contains the same number twice.
 
 #show sudoku/3.
